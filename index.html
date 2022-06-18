@@ -12,17 +12,24 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/overlays.css" />
+    <link rel="stylesheet" href="styles/configuration.css" />
   </head>
   <body>
+    <div id="backdrop"></div>
+
+    <!-- page header -->
     <header id="main-header">
       <h1>Play Tic Tac Toe</h1>
       <p>Built with Loves</p>
     </header>
+
     <main>
       <!-- overlay  (or div) -->
-      <aside>
+      <aside class="modal" id="config-overlay">
         <h2>Choose your name</h2>
-        <form>
+
+        <form class="form-control">
           <div>
             <label for="playername">Player name</label>
             <input type="text" name="playername" id="playername" />
@@ -34,13 +41,14 @@
         </form>
       </aside>
 
+    <!-- player configuration -->
       <section id="game-configuration">
         <ol>
           <li>
             <article>
               <h2>Player 1</h2>
               <h3>PLAYER NAME</h3>
-              <p>X</p>
+              <p class="player-symbol">X</p>
               <button class="btn btn-alt">Edit</button>
             </article>
           </li>
@@ -48,13 +56,15 @@
             <article>
               <h2>Player 2</h2>
               <h3>PLAYER NAME</h3>
-              <p>O</p>
+              <p class="player-symbol">O</p>
               <button class="btn btn-alt">Edit</button>
             </article>
           </li>
         </ol>
         <button class="btn">Start New Game</button>
       </section>
+
+      <!-- game activity -->
       <section id="active-game">
         <article>
           <h3>You won!, <span id="winner-name">PLAYER NAME</span></h3>
