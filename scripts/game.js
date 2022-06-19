@@ -3,6 +3,21 @@ function startNewGame() {
     alert("Please set custom player names for both players!");
     return;
   }
-
+activePlayerNameElement.textContent = players[activePlayer].name;
   gameAreaElement.style.display = "block";
+}
+
+function switchPlayer() {
+  activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+  activePlayerNameElement.textContent = players[activePlayer].name
+}
+
+function selectGameField(event) {
+  if (event.target.tagName !== "LI") {
+    return;
+  }
+
+  event.target.textContent = players[activePlayer].symbol;
+  event.target.classList.add("disabled");
+  switchPlayer();
 }
